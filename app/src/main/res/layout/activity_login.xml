@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blackboard"
+    android:paddingLeft="30dp"
+    android:paddingTop="80dp"
+    android:paddingRight="30dp"
+    tools:context=".Login"
+    >
+
+    <ImageView
+        android:id="@+id/logo"
+    android:layout_width="match_parent"
+    android:layout_height="125dp"
+    android:layout_marginBottom="40dp"
+    android:src="@drawable/logo1" />
+
+
+
+
+    <!--<android.support.design.widget.CoordinatorLayout-->
+        <!--android:id="@+id/layoutid"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/logo">-->
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:hint="User name"
+        android:textColor="@color/white" />
+
+
+    <!--</android.support.design.widget.CoordinatorLayout>-->
+
+    <!--<android.support.design.widget.CoordinatorLayout-->
+        <!--android:id="@+id/layoutpassword"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/layoutid"-->
+        <!--tools:ignore="ExtraText">-->
+        <!--app:passwordToggleEnable="true">-->
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:layout_below="@+id/editTextUsername"
+        android:textColor="@color/white" />
+    <!--</android.support.design.widget.CoordinatorLayout>-->
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonLogin"
+        android:layout_marginTop="35dp"
+        android:visibility="gone" />
+
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/editTextPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/yellow"
+        android:textColor="@color/black"
+        android:text="Login"
+        android:textSize="20sp" />
+
+</RelativeLayout>

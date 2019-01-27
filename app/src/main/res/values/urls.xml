@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="register">http://10.10.2.104/android/v1/registerUser.php</string>
+    <string name="login">http://10.10.2.104/android/v1/userLogin.php</string>
+</resources>

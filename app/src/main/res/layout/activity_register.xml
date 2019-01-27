@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register"
+    android:paddingLeft="30dp"
+    android:paddingTop="80dp"
+    android:paddingRight="30dp"
+    android:background="@drawable/blackboard"
+    >
+
+    <!---->
+        <!--android:id="@+id/linearLayout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:orientation="vertical">-->
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/logo1" />
+
+
+
+
+
+
+    <EditText
+        android:id="@+id/editTextFullname"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+       android:layout_below="@+id/logo"
+        android:hint="Enter Full Name"
+        android:textColor="@color/white" />
+
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+       android:layout_below="@+id/editTextFullname"
+        android:hint="Enter User Name"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+      android:layout_below="@+id/editTextUsername"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/editTextPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+
+        android:backgroundTint="@color/yellow"
+        android:text="Register "
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/textViewLogin"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@id/linearLayout"-->
+        <!--android:text="Already Registered? \n Click Here to Login"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />-->
+
+</RelativeLayout>

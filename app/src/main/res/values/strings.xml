@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Akura</string>
+    <string name="asset_tracker">Asset Tracker</string>
+    <string name="password">Password</string>
+</resources>
