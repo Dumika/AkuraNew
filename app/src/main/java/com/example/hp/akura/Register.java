@@ -3,10 +3,8 @@ package com.example.hp.akura;
 
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,11 +12,9 @@ import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,7 +29,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private Button buttonRegister;
     private ProgressDialog progressDialog;
 
-    // private TextView textViewLogin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,14 +46,12 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         editTextUsername = (EditText) findViewById(R.id.editTextUsername);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
 
-        //    textViewLogin = (TextView) findViewById(R.id.textViewLogin);
-
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
 
         progressDialog = new ProgressDialog(this);
 
         buttonRegister.setOnClickListener(this);
-        //   textViewLogin.setOnClickListener(this);
+
     }
 
     private void registerUser() {

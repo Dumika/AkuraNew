@@ -8,26 +8,15 @@
     android:paddingLeft="30dp"
     android:paddingTop="80dp"
     android:paddingRight="30dp"
-    android:background="@drawable/blackboard"
-    >
+    android:background="@drawable/background">
 
-    <!---->
-        <!--android:id="@+id/linearLayout"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_centerVertical="true"-->
-        <!--android:orientation="vertical">-->
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="match_parent"
-        android:layout_height="125dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="40dp"
-        android:src="@drawable/logo1" />
-
-
-
-
+        android:src="@drawable/profile1" />
 
 
     <EditText
@@ -35,8 +24,9 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
        android:layout_below="@+id/logo"
+        android:layout_marginTop="15dp"
         android:hint="Enter Full Name"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
 
     <EditText
@@ -44,8 +34,9 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
        android:layout_below="@+id/editTextFullname"
+        android:layout_marginTop="15dp"
         android:hint="Enter User Name"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -53,8 +44,9 @@
         android:layout_height="wrap_content"
       android:layout_below="@+id/editTextUsername"
         android:hint="Enter Password"
+        android:layout_marginTop="15dp"
         android:inputType="textPassword"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/buttonRegister"
@@ -62,23 +54,12 @@
         android:layout_height="60dp"
         android:layout_below="@+id/editTextPassword"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
 
-        android:backgroundTint="@color/yellow"
+        android:backgroundTint="@color/green"
         android:text="Register "
         android:textColor="@color/black"
         android:textSize="20sp" />
 
-
-
-
-    <!--<TextView-->
-        <!--android:id="@+id/textViewLogin"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_below="@id/linearLayout"-->
-        <!--android:text="Already Registered? \n Click Here to Login"-->
-        <!--android:textAlignment="center"-->
-        <!--android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />-->
 
 </RelativeLayout>

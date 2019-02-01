@@ -14,6 +14,8 @@ public class LogOrReg extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_or_reg);
 
+
+
         b1=findViewById(R.id.btn_login);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -22,6 +24,7 @@ public class LogOrReg extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
         b2=findViewById(R.id.btn_reg);
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,4 +35,5 @@ public class LogOrReg extends AppCompatActivity {
         });
 
     }
+
 }

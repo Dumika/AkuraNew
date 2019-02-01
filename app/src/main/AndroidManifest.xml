@@ -4,6 +4,7 @@
     package="com.example.hp.akura">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +14,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Home"></activity>
+        <activity android:name=".ItemListing"></activity>
+        <activity android:name=".AddHard" />
+        <activity android:name=".Hard" />
+        <activity android:name=".MaintenanceAdd" />
+        <activity android:name=".Maintenance" />
+        <activity android:name=".SoftAdd" />
+        <activity android:name=".SoftAsset" />
+        <activity android:name=".ItemDelete" />
+        <activity android:name=".ItemUpdate" />
+        <activity android:name=".ItemUpdateDelete" />
+        <activity android:name=".ItemView" />
+        <activity android:name=".ItemAdd" />
+        <activity android:name=".HardAsset" />
+        <activity android:name=".Reservation" />
+        <activity android:name=".Home" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Logo">
             <intent-filter>

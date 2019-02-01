@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Reservation"
+    android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingTop="40dp"
+    android:paddingRight="30dp"
+    android:background="@drawable/background">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reservation"
+        android:textSize="40dp"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:backgroundTint="@color/green"
+        android:layout_marginTop="150dp"
+        android:text="Property" />
+
+    <Button
+        android:id="@+id/btnView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:textSize="20dp"
+        android:layout_below="@id/btnAdd"
+        android:layout_marginTop="15dp"
+        android:text="Inventory" />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:textSize="20dp"
+        android:layout_below="@id/btnView"
+        android:layout_marginTop="15dp"
+        android:text="Item" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:textSize="20dp"
+        android:layout_below="@id/btnUpdate"
+        android:layout_marginTop="15dp"
+        android:text="Laboratories" />
+
+    <!--<Button-->
+        <!--android:id="@+id/button2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="101dp"-->
+        <!--android:text="Property" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/button3"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignStart="@+id/button2"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_marginTop="162dp"-->
+        <!--android:text="Inventory"-->
+        <!--android:layout_alignLeft="@+id/button2" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/button4"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignStart="@+id/button3"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginStart="9dp"-->
+        <!--android:text="Item"-->
+        <!--android:layout_alignLeft="@+id/button3"-->
+        <!--android:layout_marginLeft="9dp" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/button5"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignStart="@+id/button4"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginStart="-13dp"-->
+        <!--android:layout_marginBottom="158dp"-->
+        <!--android:text="Laboratories"-->
+        <!--android:layout_alignLeft="@+id/button4"-->
+        <!--android:layout_marginLeft="-13dp" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/button6"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignEnd="@+id/button4"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginBottom="87dp"-->
+        <!--android:text="Vehicle"-->
+        <!--android:layout_alignRight="@+id/button4" />-->
+
+</RelativeLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MaintenanceAdd"
+    android:paddingLeft="30dp"
+    android:paddingTop="40dp"
+    android:paddingRight="30dp"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maintenance"
+        android:textSize="40dp"
+        android:textColor="@color/white"/>
+
+
+    <EditText
+        android:id="@+id/editTextMId"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:hint="Maintenance Id"
+        android:textColor="@color/black" />
+
+
+    <EditText
+        android:id="@+id/editTextType"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Type"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/editTextSProvider"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Service Provider"
+        android:textColor="@color/black" />
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Date"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/editTextPayment"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Payment"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Supplier"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+
+        android:backgroundTint="@color/green"
+        android:text="Add"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+</LinearLayout>
