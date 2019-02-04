@@ -4,27 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".SoftUpdate"
     android:paddingLeft="30dp"
     android:paddingTop="40dp"
     android:paddingRight="30dp"
-    android:background="@drawable/background"
-    tools:context=".SoftAdd">
+    android:background="@drawable/background">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Soft Asset"
-        android:textSize="40sp"
+        android:text="Soft Asset Update"
+        android:textSize="30sp"
         android:textColor="@color/white"/>
-
-
 
 
     <EditText
         android:id="@+id/editTextSerialNo"
-        android:layout_marginTop="130dp"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
         android:hint="Serial No"
         android:textColor="@color/black" />
 
@@ -34,9 +32,8 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextSerialNo"
-
-        android:textColor="@color/black"
-        android:hint="Software" />
+        android:hint="Software"
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/editTextProductKey"
@@ -45,14 +42,12 @@
         android:layout_below="@+id/editTextSoftware"
         android:hint="Product Key"
         android:textColor="@color/black" />
-
     <EditText
         android:id="@+id/editTextRDate"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextProductKey"
         android:hint="Renewal Date"
-
         android:textColor="@color/black" />
 
     <EditText
@@ -69,7 +64,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextWarranty"
         android:hint="Purchased Date"
-
         android:textColor="@color/black" />
 
     <EditText
@@ -77,7 +71,7 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextPDate"
-        android:hint="Purchased Details"
+        android:hint="Purchased Drtails"
         android:textColor="@color/black" />
 
     <Button
@@ -87,10 +81,13 @@
         android:layout_below="@+id/editTextPDetails"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+
         android:backgroundTint="@color/green"
-        android:text="Add"
+        android:text="Save"
         android:textColor="@color/black"
         android:textSize="20sp"
         tools:targetApi="lollipop" />
+
+
 
 </RelativeLayout>

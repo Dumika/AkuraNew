@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ItemListing">
+    tools:context=".MaintenanceListing">
     <android.support.v7.widget.Toolbar
-        app:title="Items List"
+        app:title="Maintenance Record List"
         android:background="@color/colorAccent"
         app:titleTextColor="@android:color/white"
         android:layout_width="match_parent"

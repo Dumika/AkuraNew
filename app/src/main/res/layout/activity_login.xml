@@ -34,6 +34,7 @@
         android:layout_below="@+id/logo"
         android:layout_marginTop="30dp"
         android:hint="User name"
+
         android:textColor="@color/black" />
 
 
@@ -51,11 +52,12 @@
         android:id="@+id/editTextPassword"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextUsername"
+        android:layout_marginTop="15dp"
         android:hint="password"
         android:inputType="textPassword"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/editTextUsername"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        tools:text="iii" />
     <!--</android.support.design.widget.CoordinatorLayout>-->
 
     <ProgressBar

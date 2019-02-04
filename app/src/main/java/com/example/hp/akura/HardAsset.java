@@ -3,52 +3,38 @@ package com.example.hp.akura;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 
 public class HardAsset extends AppCompatActivity {
-    Button b1,b2;
+    CardView cardAdd, cardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hard_asset);
 
-        b1=findViewById(R.id.btnAdd);
-        b1.setOnClickListener(new View.OnClickListener() {
+        cardAdd = findViewById(R.id.card_add);
+        cardView = findViewById(R.id.card_view);
+
+        cardAdd.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent i=new Intent(HardAsset.this,  ItemAdd.class);  //
+            public void onClick(View view) {
+                Intent i = new Intent(HardAsset.this, ItemAdd.class);
+                startActivity(i);
+            }
+        });
+
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(HardAsset.this, ItemListing.class);
                 startActivity(i);
             }
         });
 
 
-        b2=findViewById(R.id.btnView);
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i=new Intent(HardAsset.this,  ItemListing.class);
-                startActivity(i);
-            }
-        });
-
-//        b3=findViewById(R.id.btnUpdate);
-//        b3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i=new Intent(HardAsset.this,  ItemUpdate.class);
-//                startActivity(i);
-//            }
-//        });
-//
-//        b4=findViewById(R.id.btnDelete);
-//        b4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i=new Intent(HardAsset.this,  ItemDelete.class);
-//                startActivity(i);
-//            }
-//        });
     }
 }
+

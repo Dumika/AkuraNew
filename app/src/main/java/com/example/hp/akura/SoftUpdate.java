@@ -3,9 +3,9 @@ package com.example.hp.akura;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,20 +22,23 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ItemUpdate extends AppCompatActivity {
-    private EditText editTextSerialNo, editTextType, editTextSection, editTextPersonInCharge, editTextQuantity, editTextSupplier;
+public class SoftUpdate extends AppCompatActivity {
+
+    private EditText editTextSerialNo, editTextSoftware, editTextProductKey, editTextRDate, editTextWarranty, editTextPDate, editTextPDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item_update);
+        setContentView(R.layout.activity_soft_update);
 
         editTextSerialNo = findViewById(R.id.editTextSerialNo);
-        editTextType = findViewById(R.id.editTextType);
-        editTextSection = findViewById(R.id.editTextSection);
-        editTextPersonInCharge = findViewById(R.id.editTextPerson);
-        editTextQuantity = findViewById(R.id.editTextQuantity);
-        editTextSupplier = findViewById(R.id.editTextSupply);
+        editTextSoftware = findViewById(R.id.editTextSoftware);
+        editTextProductKey = findViewById(R.id.editTextProductKey);
+        editTextRDate = findViewById(R.id.editTextRDate);
+        editTextWarranty = findViewById(R.id.editTextWarranty);
+        editTextPDate = findViewById(R.id.editTextPDate);
+        editTextPDetails = findViewById(R.id.editTextPDetails);
+
         Button buttonSave = findViewById(R.id.buttonAdd);
 
         buttonSave.setOnClickListener(new View.OnClickListener() {
@@ -50,12 +53,13 @@ public class ItemUpdate extends AppCompatActivity {
 
     void setDataFromIntent() {
         Intent data = getIntent();
-        editTextSerialNo.setText(data.getStringExtra("serial_no"));
-        editTextType.setText(data.getStringExtra("type"));
-        editTextSection.setText(data.getStringExtra("section"));
-        editTextPersonInCharge.setText(data.getStringExtra("person_in_charge"));
-        editTextQuantity.setText(data.getStringExtra("quantity"));
-        editTextSupplier.setText(data.getStringExtra("supplier"));
+        editTextSerialNo.setText(data.getStringExtra("serialno"));
+        editTextSoftware.setText(data.getStringExtra("software"));
+        editTextProductKey.setText(data.getStringExtra("productkey"));
+        editTextRDate.setText(data.getStringExtra("rdate"));
+        editTextWarranty.setText(data.getStringExtra("warranty"));
+        editTextPDate.setText(data.getStringExtra("pdate"));
+        editTextPDetails.setText(data.getStringExtra("pdetails"));
     }
 
     void saveEdits() {
@@ -63,7 +67,7 @@ public class ItemUpdate extends AppCompatActivity {
         progressDialog.setMessage("Saving changes...");
         StringRequest request = new StringRequest(
                 Request.Method.POST,
-                Constants.ITEM_UPDATE_URL,
+                Constants.SOFT_UPDATE_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -71,20 +75,20 @@ public class ItemUpdate extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             if (jsonObject.getInt("success") == 1) {
-                                new AlertDialog.Builder(ItemUpdate.this)
+                                new AlertDialog.Builder(SoftUpdate.this)
                                         .setTitle("Success")
                                         .setMessage(jsonObject.getString("message"))
                                         .setPositiveButton("Close", new DialogInterface.OnClickListener() {
                                             @Override
                                             public void onClick(DialogInterface dialogInterface, int i) {
                                                 dialogInterface.dismiss();
-                                                ItemUpdate.this.setResult(RESULT_OK);
-                                                ItemUpdate.this.finish();
+                                                SoftUpdate.this.setResult(RESULT_OK);
+                                                SoftUpdate.this.finish();
                                             }
                                         })
                                         .show();
                             } else {
-                                new AlertDialog.Builder(ItemUpdate.this)
+                                new AlertDialog.Builder(SoftUpdate.this)
                                         .setTitle("Error")
                                         .setMessage("Failed to edit item.")
                                         .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
@@ -97,7 +101,7 @@ public class ItemUpdate extends AppCompatActivity {
                                         .show();
                             }
                         } catch (JSONException e) {
-                            new AlertDialog.Builder(ItemUpdate.this)
+                            new AlertDialog.Builder(SoftUpdate.this)
                                     .setTitle("Error")
                                     .setMessage("Failed to parse response")
                                     .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
@@ -115,7 +119,7 @@ public class ItemUpdate extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         progressDialog.dismiss();
-                        new AlertDialog.Builder(ItemUpdate.this)
+                        new AlertDialog.Builder(SoftUpdate.this)
                                 .setTitle("Error")
                                 .setMessage(error.toString())
                                 .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
@@ -133,11 +137,12 @@ public class ItemUpdate extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 Map<String, String> map = new HashMap<>();
                 map.put("SerialNo", editTextSerialNo.getText().toString());
-                map.put("Type", editTextType.getText().toString());
-                map.put("Section", editTextSection.getText().toString());
-                map.put("PersonInCharge", editTextPersonInCharge.getText().toString());
-                map.put("Quantity", editTextQuantity.getText().toString());
-                map.put("Supplier", editTextSupplier.getText().toString());
+                map.put("Software", editTextSoftware.getText().toString());
+                map.put("ProductKey", editTextProductKey.getText().toString());
+                map.put("RDate", editTextRDate.getText().toString());
+                map.put("Warranty", editTextWarranty.getText().toString());
+                map.put("PDate", editTextPDate.getText().toString());
+                map.put("PDetails", editTextPDetails.getText().toString());
                 return map;
             }
         };

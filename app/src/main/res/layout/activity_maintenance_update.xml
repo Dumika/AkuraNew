@@ -4,93 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".MaintenanceUpdate"
     android:paddingLeft="30dp"
     android:paddingTop="40dp"
     android:paddingRight="30dp"
-    android:background="@drawable/background"
-    tools:context=".SoftAdd">
+    android:background="@drawable/background">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Soft Asset"
-        android:textSize="40sp"
+        android:text="Maintenance update"
+        android:textSize="30sp"
         android:textColor="@color/white"/>
 
 
-
-
     <EditText
-        android:id="@+id/editTextSerialNo"
-        android:layout_marginTop="130dp"
+        android:id="@+id/editTextMId"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:hint="Serial No"
+        android:layout_marginTop="150dp"
+        android:hint="Maintenance Id"
         android:textColor="@color/black" />
 
 
     <EditText
-        android:id="@+id/editTextSoftware"
+        android:id="@+id/editTextType"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextSerialNo"
-
-        android:textColor="@color/black"
-        android:hint="Software" />
-
-    <EditText
-        android:id="@+id/editTextProductKey"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextSoftware"
-        android:hint="Product Key"
+        android:layout_below="@+id/editTextMId"
+        android:hint="Type"
         android:textColor="@color/black" />
 
     <EditText
-        android:id="@+id/editTextRDate"
+        android:id="@+id/editTextSProvider"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextProductKey"
-        android:hint="Renewal Date"
-
+        android:layout_below="@+id/editTextType"
+        android:hint="Service Provider"
+        android:textColor="@color/black" />
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextSProvider"
+        android:hint="Date"
         android:textColor="@color/black" />
 
     <EditText
-        android:id="@+id/editTextWarranty"
+        android:id="@+id/editTextPayment"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextRDate"
-        android:hint="Warranty"
+        android:layout_below="@+id/editTextDate"
+        android:hint="Payment"
         android:textColor="@color/black" />
 
     <EditText
-        android:id="@+id/editTextPDate"
+        android:id="@+id/editTextDescription"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextWarranty"
-        android:hint="Purchased Date"
-
-        android:textColor="@color/black" />
-
-    <EditText
-        android:id="@+id/editTextPDetails"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextPDate"
-        android:hint="Purchased Details"
+        android:layout_below="@+id/editTextPayment"
+        android:hint="Description"
         android:textColor="@color/black" />
 
     <Button
         android:id="@+id/buttonAdd"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_below="@+id/editTextPDetails"
+        android:layout_below="@+id/editTextDescription"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
+
         android:backgroundTint="@color/green"
-        android:text="Add"
+        android:text="Save"
         android:textColor="@color/black"
         android:textSize="20sp"
         tools:targetApi="lollipop" />
+
+
 
 </RelativeLayout>

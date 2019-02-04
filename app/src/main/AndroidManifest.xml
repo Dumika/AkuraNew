@@ -14,29 +14,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ItemListing"></activity>
-        <activity android:name=".AddHard" />
-        <activity android:name=".Hard" />
+        <activity android:name=".MaintenanceUpdate"></activity>
+        <activity android:name=".MaintenanceListing" />
+        <activity android:name=".SoftUpdate" />
+        <activity android:name=".SoftListing" />
+        <activity android:name=".ItemListing" />
         <activity android:name=".MaintenanceAdd" />
         <activity android:name=".Maintenance" />
         <activity android:name=".SoftAdd" />
         <activity android:name=".SoftAsset" />
-        <activity android:name=".ItemDelete" />
-        <activity android:name=".ItemUpdate" />
-        <activity android:name=".ItemUpdateDelete" />
-        <activity android:name=".ItemView" />
         <activity android:name=".ItemAdd" />
+        <activity android:name=".ItemUpdate" />
         <activity android:name=".HardAsset" />
         <activity android:name=".Reservation" />
-        <activity android:name=".Home" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Logo">
+        <activity android:name=".Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Logo" />
 
         <meta-data
             android:name="preloaded_fonts"

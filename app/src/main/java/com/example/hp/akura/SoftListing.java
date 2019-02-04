@@ -4,9 +4,9 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +14,6 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -29,7 +28,8 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ItemListing extends AppCompatActivity {
+public class SoftListing extends AppCompatActivity {
+
     private ListView itemsListView;
     private ProgressDialog progressDialog;
     private JSONArray itemsList;
@@ -37,11 +37,11 @@ public class ItemListing extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item_listing);
+        setContentView(R.layout.activity_soft_listing);
 
         itemsListView = findViewById(R.id.itemsList);
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading items...");
+        progressDialog.setMessage("Loading asset...");
 
         sendGetItemsRequest();
 
@@ -54,9 +54,9 @@ public class ItemListing extends AppCompatActivity {
     void sendGetItemsRequest() {
         progressDialog.show();
         DataRequester dataRequester = new DataRequester(
-                ItemListing.this,
+                SoftListing.this,
                 Request.Method.GET,
-                Constants.ITEMS_GET_URL,
+                Constants.SOFT_GET_URL,
                 null,
                 null
         );
@@ -69,7 +69,7 @@ public class ItemListing extends AppCompatActivity {
                             itemsList = response.getJSONArray("items");
                             updateList();
                         } catch (JSONException e) {
-                            new AlertDialog.Builder(ItemListing.this)
+                            new AlertDialog.Builder(SoftListing.this)
                                     .setTitle("Error")
                                     .setMessage("Error parsing data.")
                                     .setNegativeButton(
@@ -89,7 +89,7 @@ public class ItemListing extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         progressDialog.dismiss();
-                        new AlertDialog.Builder(ItemListing.this)
+                        new AlertDialog.Builder(SoftListing.this)
                                 .setTitle("Error")
                                 .setMessage(error.toString())
                                 .setNegativeButton(
@@ -115,7 +115,7 @@ public class ItemListing extends AppCompatActivity {
 
         StringRequest request = new StringRequest(
                 Request.Method.POST,
-                Constants.ITEM_DELETE_URL,
+                Constants.SOFT_DELETE_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String strResponse) {
@@ -124,7 +124,7 @@ public class ItemListing extends AppCompatActivity {
                             JSONObject response = new JSONObject(strResponse);
                             Log.d("MY_APP", response.toString());
                             if (response.getInt("success") == 1) {
-                                new AlertDialog.Builder(ItemListing.this)
+                                new AlertDialog.Builder(SoftListing.this)
                                         .setTitle("Success")
                                         .setMessage("Successfully deleted the item.")
                                         .setPositiveButton(
@@ -138,7 +138,7 @@ public class ItemListing extends AppCompatActivity {
                                         ).show();
                                 sendGetItemsRequest();
                             } else {
-                                new AlertDialog.Builder(ItemListing.this)
+                                new AlertDialog.Builder(SoftListing.this)
                                         .setTitle("Error")
                                         .setMessage("Error deleting item\n" + response.getString("message"))
                                         .setPositiveButton(
@@ -152,7 +152,7 @@ public class ItemListing extends AppCompatActivity {
                                         ).show();
                             }
                         } catch (JSONException e) {
-                            new AlertDialog.Builder(ItemListing.this)
+                            new AlertDialog.Builder(SoftListing.this)
                                     .setTitle("Error")
                                     .setMessage("Error deleting item\nError parsing data")
                                     .setPositiveButton(
@@ -172,7 +172,7 @@ public class ItemListing extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         progressDialog.dismiss();
-                        new AlertDialog.Builder(ItemListing.this)
+                        new AlertDialog.Builder(SoftListing.this)
                                 .setTitle("Error")
                                 .setMessage("Error deleting item\n" + error.toString())
                                 .setPositiveButton(
@@ -226,31 +226,34 @@ public class ItemListing extends AppCompatActivity {
         @Override
         public View getView(final int i, View view, ViewGroup viewGroup) {
             if (view == null) {
-                view = getLayoutInflater().inflate(R.layout.hard_asset_list_item, viewGroup, false);
-                TextView serial_no = view.findViewById(R.id.serial_no);
-                TextView type = view.findViewById(R.id.type);
-                TextView section = view.findViewById(R.id.section);
-                TextView person_in_charge = view.findViewById(R.id.person_in_charge);
-                TextView quantity = view.findViewById(R.id.quantity);
-                TextView supplier = view.findViewById(R.id.supplier);
+                view = getLayoutInflater().inflate(R.layout.soft_asset_list_item, viewGroup, false);
+                TextView serialno = view.findViewById(R.id.serialno);
+                TextView software = view.findViewById(R.id.software);
+                TextView productkey = view.findViewById(R.id.productkey);
+                TextView rdate = view.findViewById(R.id.rdate);
+                TextView warranty = view.findViewById(R.id.warranty);
+                TextView pdate = view.findViewById(R.id.pdate);
+                TextView pdetails = view.findViewById(R.id.pdetails);
 
                 Button deleteBtn = view.findViewById(R.id.button_delete);
                 Button editBtn = view.findViewById(R.id.button_edit);
 
                 try {
-                    final String s_serial_no = getItem(i).getString("SerialNo");
-                    final String s_type = getItem(i).getString("Type");
-                    final String s_section = getItem(i).getString("Section");
-                    final String s_person_in_charge = getItem(i).getString("PersonInCharge");
-                    final String s_quantity = getItem(i).getString("Quantity");
-                    final String s_supplier = getItem(i).getString("Supplier");
+                    final String s_serialno = getItem(i).getString("SerialNo");
+                    final String s_software = getItem(i).getString("Software");
+                    final String s_productkey = getItem(i).getString("ProductKey");
+                    final String s_rdate = getItem(i).getString("RDate");
+                    final String s_warranty = getItem(i).getString("Warranty");
+                    final String s_pdate = getItem(i).getString("PDate");
+                    final String s_pdetails = getItem(i).getString("PDetails");
 
-                    serial_no.setText(String.format("Serial No : %s", s_serial_no));
-                    type.setText(String.format("Type : %s", s_type));
-                    section.setText(String.format("Section : %s", s_section));
-                    person_in_charge.setText(String.format("Person in charge : %s", s_person_in_charge));
-                    quantity.setText(String.format("Quantity : %s", s_quantity));
-                    supplier.setText(String.format("Supplier : %s", s_supplier));
+                    serialno.setText(String.format("Serial No : %s", s_serialno));
+                    software.setText(String.format("Software : %s", s_software));
+                    productkey.setText(String.format("Product Key : %s", s_productkey));
+                    rdate.setText(String.format("Renewal Date : %s", s_rdate));
+                    warranty.setText(String.format("Warrantyy : %s", s_warranty));
+                    pdate.setText(String.format("Purchased Date : %s", s_pdate));
+                    pdetails.setText(String.format("Purchased Details : %s", s_pdetails));
 
                     deleteBtn.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -265,13 +268,14 @@ public class ItemListing extends AppCompatActivity {
                     editBtn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent intent = new Intent(ItemListing.this, ItemUpdate.class);
-                            intent.putExtra("serial_no", s_serial_no);
-                            intent.putExtra("type", s_type);
-                            intent.putExtra("section", s_section);
-                            intent.putExtra("person_in_charge", s_person_in_charge);
-                            intent.putExtra("quantity", s_quantity);
-                            intent.putExtra("supplier", s_supplier);
+                            Intent intent = new Intent(SoftListing.this, SoftUpdate.class);
+                            intent.putExtra("serialno", s_serialno);
+                            intent.putExtra("software", s_software);
+                            intent.putExtra("productkey", s_productkey);
+                            intent.putExtra("rdate", s_rdate);
+                            intent.putExtra("warranty", s_warranty);
+                            intent.putExtra("pdate", s_pdate);
+                            intent.putExtra("pdetails", s_pdetails);
 
                             startActivityForResult(intent, 0);
                         }

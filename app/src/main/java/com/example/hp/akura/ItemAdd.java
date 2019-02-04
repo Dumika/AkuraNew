@@ -22,24 +22,14 @@ import java.util.Map;
 
 
 public class ItemAdd extends AppCompatActivity implements View.OnClickListener {
-
-
-
-
-
     private EditText editTextSerialNo, editTextType, editTextSection, editTextPersonInCharge, editTextQuantity, editTextSupplier;
     private Button buttonAdd;
     private ProgressDialog progressDialog;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_add);
-
-
-
 
         editTextSerialNo = (EditText) findViewById(R.id.editTextSerialNo);
         editTextType = (EditText) findViewById(R.id.editTextType);
@@ -53,7 +43,6 @@ public class ItemAdd extends AppCompatActivity implements View.OnClickListener {
         progressDialog = new ProgressDialog(this);
 
         buttonAdd.setOnClickListener(this);
-
     }
 
     private void registerUser() {
@@ -68,7 +57,7 @@ public class ItemAdd extends AppCompatActivity implements View.OnClickListener {
         progressDialog.show();
 
         StringRequest stringRequest=new StringRequest(Request.Method.POST,
-                getString(R.string.AddItem),
+                Constants.ITEM_ADD_URL,
                 new Response.Listener <String>() {
 
                     @Override
@@ -104,18 +93,13 @@ public class ItemAdd extends AppCompatActivity implements View.OnClickListener {
                 params.put("Quantity", Quantity);
                 params.put("Supplier", Supplier);
 
-
                 return params;
             }
         };
 
 //        RequestQueue requestQueue=Volley.newRequestQueue(this);
 //        requestQueue.add(stringRequest);
-
-
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
-
-
     }
 
     @Override

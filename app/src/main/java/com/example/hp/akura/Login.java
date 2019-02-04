@@ -57,8 +57,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         progressDialog.show();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
-                // Constants.URL_LOGIN,
-                getString(R.string.login),
+                // Constants.LOGIN_URL,
+                Constants.LOGIN_URL,
                 new Response.Listener <String>() {
                     @Override
                     public void onResponse(String response) {
@@ -173,7 +173,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 ////       private void Login(String id, String password){
 ////           loading.setVisibility(View.VISIBLE);
 ////           btn_login.setVisibility(View.GONE);
-////            StringRequest stringRequest=new StringRequest(Request.Method,POST,URL_LOGIN,
+////            StringRequest stringRequest=new StringRequest(Request.Method,POST,LOGIN_URL,
 ////                    new Response.Listener<String>(){
 ////                @Override
 ////                        public void onResponse(String response){
